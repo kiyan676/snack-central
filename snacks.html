@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Snacks</title>
+
+
+<style>
+body{
+   font-family:Arial;
+   margin:0;
+   background:#f6f6f6;
+}
+
+
+.topbar{
+   background:#0b6b3a;
+   color:white;
+   padding:15px;
+}
+
+
+.logo{
+   font-size:24px;
+   font-weight:bold;
+}
+
+
+nav{
+   background:#f5f5f5;
+   padding:12px;
+}
+
+
+nav a{
+   margin-right:15px;
+   text-decoration:none;
+   color:black;
+   font-weight:bold;
+}
+
+
+.container{
+   padding:20px;
+}
+
+
+.grid{
+   display:grid;
+   grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+   gap:15px;
+}
+
+
+.card{
+   background:white;
+   padding:15px;
+   border-radius:10px;
+   text-align:center;
+   box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+button{
+   background:#ffd400;
+   border:none;
+   padding:10px;
+   cursor:pointer;
+   font-weight:bold;
+}
+</style>
+</head>
+
+
+<body>
+
+
+<div class="topbar">
+   <div class="logo">Snack Central</div>
+</div>
+
+
+<nav>
+   <a href="index.html">Home</a>
+   <a href="deals.html">Deals</a>
+   <a href="snacks.html">Snacks</a>
+   <a href="order.html">Order</a>
+   <a href="cart.html">Cart</a>
+</nav>
+
+
+<div class="container">
+
+
+<div class="grid">
+
+
+   <div class="card">
+       <h3>Nerds Gummy Clusters box</h3>
+       <p>$5.00</p>
+       <button onclick="addToCart('Nerds Gummy Clusters box',5)">Add</button>
+   </div>
+
+
+   <div class="card">
+       <h3>Nerds Gummy Clusters Bag</h3>
+       <p>$4.00</p>
+       <button onclick="addToCart('Nerds Gummy Clusters Bag',4)">Add</button>
+   </div>
+
+
+   <div class="card">
+       <h3>Nerds Gummy Clusters Cherry Lemonade Bag</h3>
+       <p>$4.00</p>
+       <button onclick="addToCart('Nerds Gummy Clusters Cherry Lemonade Bag',4)">Add</button>
+   </div>
+
+
+   <div class="card">
+       <h3>Nerds Box</h3>
+       <p>$5.00</p>
+       <button onclick="addToCart('Nerds Box',5)">Add</button>
+   </div>
+
+
+   <div class="card">
+       <h3>Nerds Rope</h3>
+       <p>$3.00</p>
+       <button onclick="addToCart('Nerds Rope',3)">Add</button>
+   </div>
+
+
+</div>
+
+
+</div>
+
+
+<footer>
+   © 2026 Snack Central
+</footer>
+
+
+
+
+<script src="apps.js"></script>
+
+
+<script>
+   let cart = [];
+
+
+try {
+   cart = JSON.parse(localStorage.getItem("cart")) || [];
+} catch (e) {
+   cart = [];
+}
+
+
+// SAVE
+function save(){
+   localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+
+// ADD
+function addToCart(name, price){
+   cart.push({name, price});
+   save();
+   console.log("Added:", name);
+}
+
+
+// REMOVE
+function removeItem(i){
+   if(i < 0 || i >= cart.length) return;
+
+
+   cart.splice(i, 1);
+   save();
+   renderCart();
+}
+
+
+// TOTAL
+function getTotal(){
+   return cart.reduce((sum, item) => {
+       return sum + (Number(item.price) || 0);
+   }, 0);
+}
+
+
+// RENDER
+function renderCart(){
+   const box = document.getElementById("cartItems");
+   const totalBox = document.getElementById("total");
+
+
+   if(!box) return;
+
+
+   box.innerHTML = "";
+
+
+   if(cart.length === 0){
+       box.innerHTML = "<p>Your cart is empty.</p>";
+   } else {
+       cart.forEach((item, i) => {
+           box.innerHTML += `
+           <div style="display:flex;justify-content:space-between;padding:10px;border-bottom:1px solid #ddd">
+               <div>
+                   <b>${item.name}</b><br>
+                   $${Number(item.price).toFixed(2)}
+               </div>
+               <button onclick="removeItem(${i})">Remove</button>
+           </div>
+           `;
+       });
+   }
+
+
+   if(totalBox){
+       totalBox.innerText = "$" + getTotal().toFixed(2);
+   }
+}
+
+
+// CLEAR
+function clearCart(){
+   cart = [];
+   save();
+   renderCart();
+}
+
+
+window.addEventListener("load", renderCart);
+</script>
+
+
+</body>
+</html>

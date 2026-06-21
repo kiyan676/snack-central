@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Order Page</title>
+
+
+<style>
+body{
+   margin:0;
+   font-family:Arial;
+   background:#f4f6f8;
+}
+
+
+.topbar{
+   background:#0b6b3f;
+   color:white;
+   padding:15px;
+   font-size:20px;
+   font-weight:bold;
+}
+
+
+.container{
+   max-width:500px;
+   margin:auto;
+   padding:20px;
+}
+
+
+form{
+   background:white;
+   padding:20px;
+   border-radius:10px;
+   box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+input{
+   width:100%;
+   padding:10px;
+   margin:10px 0;
+   border:1px solid #ccc;
+   border-radius:5px;
+}
+
+
+button{
+   width:100%;
+   padding:12px;
+   background:#ffd700;
+   border:none;
+   font-weight:bold;
+   cursor:pointer;
+}
+
+
+button:hover{
+   background:#e6c200;
+}
+
+
+
+
+
+
+.logo{
+   font-size:28px;
+   font-weight:bold;
+}
+
+
+
+
+nav{
+   background:#ffffff;
+   padding:12px;
+   border-bottom:1px solid #ddd;
+}
+
+
+nav a{
+   margin-right:18px;
+   text-decoration:none;
+   color:black;
+   font-weight:bold;
+}
+
+
+
+
+
+
+footer{
+   background:#006b3f;
+   color:white;
+   padding:20px;
+   text-align:center;
+   margin-top:20px;
+}
+</style>
+</head>
+
+
+<body>
+
+
+<div class="topbar">
+   Place Your Order
+</div>
+
+
+<nav>
+   <a href="index.html">Home</a>
+   <a href="deals.html">Deals</a>
+   <a href="snacks.html">Snacks</a>
+   <a href="order.html">Order</a>
+   <a href="cart.html">Cart</a>
+</nav>
+
+
+<div class="container">
+
+
+   <form action="https://formspree.io/f/maqzgqjv" method="POST">
+
+
+       <h2>Order Form</h2>
+
+
+       <input type="text" name="name" placeholder="Your First And Last Name" required>
+
+
+       <input type="text" name="item" placeholder="What do you want (You can write multiple things)?" required>
+
+
+       <input type="number" name="quantity" placeholder="Quantity" required>
+
+
+       <button type="submit">Submit Order</button>
+
+
+   </form>
+
+
+</div>
+
+
+<footer>
+   © 2026 Snack Central
+</footer>
+
+
+
+
+</body>
+</html>

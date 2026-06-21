@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Snack Central - Deals</title>
+
+
+<style>
+body{
+   margin:0;
+   font-family:Arial, sans-serif;
+   background:#f4f6f8;
+}
+
+
+/* HEADER */
+.topbar{
+   background:#006b3f;
+   color:white;
+   padding:15px;
+}
+
+
+.logo{
+   font-size:30px;
+   font-weight:bold;
+}
+
+
+/* NAV */
+nav{
+   background:white;
+   padding:12px;
+   border-bottom:1px solid #ddd;
+}
+
+
+nav a{
+   margin-right:18px;
+   text-decoration:none;
+   color:black;
+   font-weight:bold;
+}
+
+
+nav a:hover{
+   color:#006b3f;
+}
+
+
+/* HERO */
+.hero{
+   background:linear-gradient(135deg,#ffd700,#ffb300);
+   text-align:center;
+   padding:50px 20px;
+}
+
+
+.hero h1{
+   margin:0;
+   font-size:48px;
+}
+
+
+.hero p{
+   font-size:20px;
+   margin-top:10px;
+}
+
+
+/* DEALS */
+.container{
+   max-width:1100px;
+   margin:auto;
+   padding:30px;
+}
+
+
+.deals{
+   display:grid;
+   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+   gap:20px;
+}
+
+
+.card{
+   background:white;
+   padding:20px;
+   border-radius:15px;
+   box-shadow:0 4px 10px rgba(0,0,0,0.1);
+   transition:0.3s;
+   border-left:8px solid #ffd700;
+}
+
+
+.card:hover{
+   transform:translateY(-5px);
+}
+
+
+.card h3{
+   margin-top:0;
+   color:#006b3f;
+}
+
+
+/* FOOTER */
+footer{
+   background:#006b3f;
+   color:white;
+   padding:20px;
+   text-align:center;
+   margin-top:30px;
+}
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="topbar">
+   <div class="logo"> Snack Central</div>
+</div>
+
+
+<nav>
+   <a href="index.html">Home</a>
+   <a href="deals.html">Deals</a>
+   <a href="snacks.html">Snacks</a>
+   <a href="order.html">Order</a>
+   <a href="cart.html">Cart</a>
+</nav>
+
+
+<div class="hero">
+   <h1>🔥 HOT DEALS 🔥</h1>
+   <p>Save more on your favorite snacks!</p>
+</div>
+
+
+<div class="container">
+
+
+   <div class="deals">
+
+
+       <div class="card">
+           <h3>🍬 Candy Combo</h3>
+           <p>Any Candy + Any Chocolate = <b>$0.50 OFF</b></p>
+       </div>
+
+
+       <div class="card">
+           <h3>🍫 Chocolate Bonus</h3>
+           <p>Buy 5, Get the 6th FREE!</p>
+       </div>
+
+
+       <div class="card">
+           <h3>🥤 Gatorade Deal</h3>
+           <p>2 Gatorades for only <b>$4</b></p>
+       </div>
+
+
+       <div class="card">
+           <h3>⚡ Energy Bundle</h3>
+           <p>Gatorade + Any Candy = <b>$1 OFF</b></p>
+       </div>
+
+
+       <div class="card">
+           <h3>👥 Refer a Friend</h3>
+           <p>Get <b>$0.50 OFF</b> when your friend buys something.</p>
+       </div>
+
+
+       <div class="card">
+           <h3>📚 Study Pack</h3>
+           <p>Gatorade + Candy + Chocolate + Gum = <b>$1.75 OFF</b></p>
+       </div>
+
+
+       <div class="card">
+           <h3>🍟 Big Snack Combo</h3>
+           <p>Big Chips + Drink = <b>$6</b></p>
+       </div>
+
+
+       <div class="card">
+           <h3>⏰ Limited Time</h3>
+           <p>Deals change every week. Don't miss out!</p>
+       </div>
+
+
+   </div>
+
+
+</div>
+
+
+<footer>
+   © 2026 Snack Central
+</footer>
+
+
+</body>
+</html>
